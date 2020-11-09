@@ -17,7 +17,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import isEqual from 'fast-deep-equal';
 import { connect } from 'react-redux';
 import { injectIntl, defineMessages } from 'react-intl';
 import { destroy, getFormValues, isDirty, isValid } from 'redux-form';
@@ -133,12 +132,6 @@ export class EditWidgetModal extends Component {
     } = this.props;
 
     const data = prepareWidgetDataForSubmit(this.preprocessOutputData(widgetSettings));
-    const isForceUpdateNeeded =
-      !isEqual(widget.contentParameters, data.contentParameters) ||
-      !isEqual(
-        widget.appliedFilters.map((filter) => filter.id.toString()),
-        data.filterIds,
-      );
 
     this.props.showScreenLockAction();
     fetch(URLS.widget(projectId, widget.id), {
@@ -148,7 +141,7 @@ export class EditWidgetModal extends Component {
       .then(() => {
         this.props.hideScreenLockAction();
         closeModal();
-        onConfirm(isForceUpdateNeeded);
+        onConfirm();
         this.props.showNotification({
           message: formatMessage(messages.editWidgetSuccess),
           type: NOTIFICATION_TYPES.SUCCESS,
