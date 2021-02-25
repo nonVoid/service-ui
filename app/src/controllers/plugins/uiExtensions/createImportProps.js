@@ -79,6 +79,7 @@ import {
   defectTypesSelector,
   updateConfigurationAttributesAction,
 } from 'controllers/project';
+import { statisticsLinkSelector, defectLinkSelector } from 'controllers/testItem';
 import { Grid } from 'components/main/grid';
 import { InputCheckbox } from 'components/inputs/inputCheckbox';
 import { AttributeListField } from 'components/main/attributeList';
@@ -111,6 +112,7 @@ import { GeneralTab } from 'pages/common/settingsPage/generalTab';
 import { RuleList, ItemContent } from 'pages/common/settingsPage/ruleList';
 import { RuleListHeader } from 'pages/common/settingsPage/ruleListHeader';
 import { getGroupedDefectTypesOptions } from 'pages/inside/dashboardItemPage/modals/common/widgetControls/utils/getWidgetCriteriaOptions';
+import { getDefaultTestItemLinkParams } from 'components/widgets/common/utils';
 import { createGlobalNamedIntegrationsSelector } from '../selectors';
 
 const BUTTONS = {
@@ -208,6 +210,8 @@ export const createImportProps = (pluginName) => ({
     isEmailIntegrationAvailableSelector,
     isAdminSelector,
     defectTypesSelector,
+    statisticsLinkSelector,
+    defectLinkSelector,
   },
   icons: {
     PlusIcon,
@@ -221,6 +225,13 @@ export const createImportProps = (pluginName) => ({
     CircleCrossIcon,
     RefreshIcon,
   },
-  utils: { fetch, URLS, debounce, getGroupedDefectTypesOptions, isEmptyObject },
+  utils: {
+    fetch,
+    URLS,
+    debounce,
+    getGroupedDefectTypesOptions,
+    isEmptyObject,
+    getDefaultTestItemLinkParams,
+  },
   validators: { attributesArray, requiredField },
 });
