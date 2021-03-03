@@ -73,12 +73,10 @@
   left: 0;
   max-width: 250px;
   margin-top: 3px;
-  border: 1px solid $COLOR--gray-80;
   box-sizing: border-box;
   font-family: $FONT-CONDBOLD;
   cursor: pointer;
   z-index: $Z-INDEX-POPUP;
-  box-shadow: 0 6px 12px $COLOR--gray-80;
   overflow: hidden;
 
   @media (max-width: $SCREEN_XS_MAX) {
@@ -112,16 +110,15 @@
   @media (max-width: $SCREEN_XS_MAX) {
     height: 50px;
     line-height: 50px;
-    background-color: $COLOR--brownish-grey;
+    background-color: $COLOR--c24;
     color: $COLOR--white-two;
-    border-bottom: 1px solid $COLOR--gray-47;
   }
 
   &:hover:not(.active) {
     background-color: $COLOR--tealish-hover;
 
     @media (max-width: $SCREEN_XS_MAX) {
-      background-color: $COLOR--gray-47;
+      background-color: $COLOR--c24-light;
     }
   }
 }
@@ -131,6 +128,6 @@
 
   @media (max-width: $SCREEN_XS_MAX) {
     color: $COLOR--booger;
-    background-color: $COLOR--black-2;
+    background-color: $COLOR--c24;
   }
 }
