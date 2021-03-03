@@ -21,7 +21,7 @@
   position: relative;
   overflow: hidden;
   box-sizing: border-box;
-  background-color: $COLOR--charcoal-grey;
+  background-color: $COLOR--white-two;
   font-family: $FONT-CONDBOLD;
   font-size: 11px;
 
@@ -30,10 +30,7 @@
   }
   &.at-bottom {
     .nav-link {
-      box-shadow: inset 0 1px 0 0 $COLOR--brownish-grey;
-
       &.active {
-        box-shadow: none;
       }
     }
   }
@@ -43,15 +40,13 @@
   width: 100%;
   height: 100%;
   box-sizing: border-box;
-  color: $COLOR--white-two;
+  color: $COLOR--c24;
   text-decoration: none;
   text-align: center;
-  box-shadow: inset 0 1px 0 0 $COLOR--brownish-grey, inset 0 -1px 0 0 $COLOR--black-2;
 
   &.active {
     color: $COLOR--booger;
-    background-color: $COLOR--black-2;
-    box-shadow: none;
+    background-color: $COLOR--white-four;
 
     svg {
       fill: $COLOR--booger;
@@ -81,7 +76,7 @@
   vertical-align: middle;
 
   svg {
-    fill: $COLOR--white-two;
+    fill: $COLOR--c24;
   }
 }
 .btn-title {
