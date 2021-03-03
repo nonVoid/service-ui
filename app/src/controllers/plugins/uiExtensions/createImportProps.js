@@ -38,6 +38,14 @@ import { showModalAction } from 'controllers/modal';
 import { fetch } from 'common/utils/fetch';
 import { isEmptyObject } from 'common/utils/isEmptyObject';
 import {
+  STATS_PB_TOTAL,
+  STATS_AB,
+  STATS_ND,
+  STATS_SI,
+  STATS_TI,
+} from 'common/constants/statistics';
+import { PASSED, FAILED, INTERRUPTED, SKIPPED } from 'common/constants/testStatuses';
+import {
   activeProjectSelector,
   activeProjectRoleSelector,
   isAdminSelector,
@@ -188,7 +196,19 @@ export const createImportProps = (pluginName) => ({
     DependentFieldsControl,
     FieldArray,
   },
-  constants: { PLUGIN_UI_EXTENSION_ADMIN_PAGE, PROJECT_SETTINGS_TAB_PAGE },
+  constants: {
+    PLUGIN_UI_EXTENSION_ADMIN_PAGE,
+    PROJECT_SETTINGS_TAB_PAGE,
+    STATS_PB_TOTAL,
+    STATS_AB,
+    STATS_ND,
+    STATS_SI,
+    STATS_TI,
+    PASSED,
+    FAILED,
+    INTERRUPTED,
+    SKIPPED,
+  },
   actions: {
     showModalAction,
     showSuccessNotification,
